@@ -23,7 +23,7 @@ namespace SkakRobot
 
         static void init()
         {
-            stockfish = new Stockfish(@"Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
+            stockfish = new Stockfish("D:/Work_LOCAL/C# Workspace/ConsoleApp1/ConsoleApp1/Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
         }
 
 
@@ -60,6 +60,7 @@ namespace SkakRobot
             {
                 moves.Add(playerInput);
                 stockfish.SetPosition(moves.ToArray());
+                if (moves.Contains(playerInput.Substring((int)(playerInput.Length / 2), (int)(playerInput.Length / 2)))) { BrickDestroyed(playerInput.Substring((int)(playerInput.Length / 2), (int)(playerInput.Length / 2))); }
                 ///CurrentGame = stockfish.GetFenPosition();
                 Console.WriteLine(stockfish.GetBoardVisual());
                 stockfish.IsMoveCorrect("");
@@ -69,6 +70,11 @@ namespace SkakRobot
                 Console.WriteLine("Bad move, try again");
                 playerTurn();
             }
+        }
+
+        static void BrickDestroyed(String location)
+        {
+            Console.WriteLine("Brick destroyed");
         }
     }
 }
