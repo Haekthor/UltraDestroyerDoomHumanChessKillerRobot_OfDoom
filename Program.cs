@@ -23,7 +23,7 @@ namespace SkakRobot
 
         static void init()
         {
-            stockfish = new Stockfish("D:/Work_LOCAL/C# Workspace/ConsoleApp1/ConsoleApp1/Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
+            stockfish = new Stockfish(@"Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
         }
 
 
@@ -56,7 +56,7 @@ namespace SkakRobot
             string playerInput = Console.ReadLine();
 
             ///stockfish.SetFenPosition(CurrentGame);
-            if (stockfish.IsMoveCorrect(playerInput))
+            if (stockfish.IsMoveCorrect(playerInput) && playerInput != "")
             {
                 moves.Add(playerInput);
                 stockfish.SetPosition(moves.ToArray());

@@ -213,6 +213,7 @@ namespace SkakRobot
 
                 tries++;
             }
+            board += "   A   B   C   D   E   F   G   H";
 
             return board;
         }
