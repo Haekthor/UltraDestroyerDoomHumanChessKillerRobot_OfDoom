@@ -13,7 +13,7 @@ namespace SkakRobot
 
         static void Main(string[] args)
         {
-            init();
+            init(); //test
 
             startGame();
 
