@@ -30,7 +30,7 @@ namespace SkakRobot
         static void startGame()
         {
             ///CurrentGame = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-            stockFishTurn();
+            playerTurn();
         }
 
         static void stockFishTurn()
@@ -60,7 +60,6 @@ namespace SkakRobot
             {
                 moves.Add(playerInput);
                 stockfish.SetPosition(moves.ToArray());
-                if (moves.Contains(playerInput.Substring((int)(playerInput.Length / 2), (int)(playerInput.Length / 2)))) { BrickDestroyed(playerInput.Substring((int)(playerInput.Length / 2), (int)(playerInput.Length / 2))); }
                 ///CurrentGame = stockfish.GetFenPosition();
                 Console.WriteLine(stockfish.GetBoardVisual());
                 stockfish.IsMoveCorrect("");
