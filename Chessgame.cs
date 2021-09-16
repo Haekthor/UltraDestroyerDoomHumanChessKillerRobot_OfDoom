@@ -88,7 +88,7 @@ namespace SkakRobot
 
                     Console.WriteLine(stockfish.GetBoardVisual());
 
-                    Console.ReadKey();
+                    //Console.ReadKey();
 
                     stockfish.IsMoveCorrect("");
 
