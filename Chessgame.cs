@@ -23,11 +23,11 @@ namespace SkakRobot
 
         public void initProcess()
         {
-            stockfish = new Stockfish("D:/Work_LOCAL/C# Workspace/ConsoleApp1/ConsoleApp1/Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
+            stockfish = new Stockfish("C:\Users\Gusta\Desktop\UltraDestroyerDoomHumanChessKillerRobot_OfDoom\UltraDestroyerDoomHumanChessKillerRobot_OfDoom\Stockfish\win\stockfish_12_win_x64\stockfish_20090216_x64.exe");
         }
         public void startGame()
         {
-            pieceLocation = new int[,] { { 4, 3, 2, 5, 6, 2, 3, 4 }, { 1, 1, 1, 1, 1, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1 }, { 4, 3, 2, 5, 6, 2, 3, 4 } };
+            pieceLocation = new int[,] { { 4, 3, 2, 5, 6, 2, 3, 4 }, { 1, 1, 1, 1, 1, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 7, 7, 7, 7, 7, 7, 7, 7 }, { 10, 9, 8, 11, 12, 8, 9, 10 } };
             movementEvent = null;
             movementEvent = new MovementEvent(pieceLocation);
             Console.WriteLine(stockfish.GetBoardVisual());
@@ -60,7 +60,10 @@ namespace SkakRobot
 
         private void playerTurn()
         {
-            
+            if (stockfish.IsMoveCorrect(stockfish.GetBestMove()))
+            {
+
+            }
             Console.WriteLine("Your move... Human");
             string playerInput = Console.ReadLine();
 
@@ -98,11 +101,13 @@ namespace SkakRobot
 
         private void printPieceLocations()
         {
-            for (int x = 0; x < 8; x++)
+            for (int x = 7; x >= 0; x--)
             {
                 string printLn = "";
                 for (int y = 0; y < 8; y++)
                 {
+                    //Console.WriteLine(y);
+                    //Console.ReadKey();
                     switch (pieceLocation[x, y])
                     {
                         case 1:
@@ -122,6 +127,24 @@ namespace SkakRobot
                             break;
                         case 6:
                             printLn = printLn + " K";
+                            break;
+                        case 7:
+                            printLn = printLn + " p";
+                            break;
+                        case 8:
+                            printLn = printLn + " b";
+                            break;
+                        case 9:
+                            printLn = printLn + " n";
+                            break;
+                        case 10:
+                            printLn = printLn + " r";
+                            break;
+                        case 11:
+                            printLn = printLn + " q";
+                            break;
+                        case 12:
+                            printLn = printLn + " k";
                             break;
                         default:
                             printLn = printLn + "  ";
