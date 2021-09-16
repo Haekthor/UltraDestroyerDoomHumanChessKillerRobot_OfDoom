@@ -23,7 +23,7 @@ namespace SkakRobot
 
         public void initProcess()
         {
-            stockfish = new Stockfish("C:/Users/Gusta/Desktop/UltraDestroyerDoomHumanChessKillerRobot_OfDoom/UltraDestroyerDoomHumanChessKillerRobot_OfDoom/Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
+            stockfish = new Stockfish("D:/Work_LOCAL/C# Workspace/ConsoleApp1/ConsoleApp1/Stockfish/win/stockfish_12_win_x64/stockfish_20090216_x64.exe");
         }
         public void startGame()
         {

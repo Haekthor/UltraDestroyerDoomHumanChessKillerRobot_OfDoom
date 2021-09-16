@@ -27,9 +27,7 @@ namespace SkakRobot
             int x2 = fromPos[0] - 1;
             int y2 = fromPos[1] - 1;
 
-            //Console.WriteLine(pieceLocation[x, y]);
-            //Console.WriteLine("x:" + x);
-            //Console.WriteLine("y:" + y);
+            //DobotMove(x2, y2, x, y, pieceLocation[y, x] != 0);
 
             pieceLocation[y , x]  = pieceLocation[y2, x2];
             pieceLocation[y2, x2] = 0;
